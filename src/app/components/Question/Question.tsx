@@ -339,7 +339,7 @@ const PersonalBrandingModal: React.FC = () => {
                         <Image src="/ModalLogo.png" className="h-12 w-12 mx-auto mt-5" alt="" height={200} width={200} />
                         <h2 className="text-xl font-semibold mb-4 mt-6">Thank You!</h2>
                         <p className="mb-6 text-sm text-gray-600">
-                            Your assessment has been submitted successfully. We'll analyze your responses
+                            Your assessment has been submitted successfully. We&apos;ll analyze your responses
                             and get back to you with personalized recommendations.
                         </p>
                         <button
