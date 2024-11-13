@@ -60,10 +60,12 @@ const PersonalDetails: React.FC<StepProps & { onClose: () => void }> = ({
       label="Receive updates via email"
       checked={formData.emailNotification}
       onChange={() => handleChange('emailNotification', !formData.emailNotification)}
+      isPersonalDetail ={true}
+
     />
 
     <button
-      className="mt-6 mb-8 w-full flex justify-center items-center gap-x-2 mx-auto bg-gradient-to-r from-[#6562aa] to-[#9996DE] text-white px-6 py-3 rounded-3xl hover:bg-violet-700"
+      className="mt-6 mb-8 w-full flex justify-center items-center gap-x-2 mx-auto bg-gradient-to-r from-[#6562aa] to-[#9996DE] text-white px-6 py-3 rounded-3xl hover:bg-violet-700  disabled:opacity-70  disabled:cursor-not-allowed"
       onClick={nextStep}
       disabled={!formData.name || !formData.email}
     >

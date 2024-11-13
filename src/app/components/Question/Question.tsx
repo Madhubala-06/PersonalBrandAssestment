@@ -22,9 +22,10 @@ const NavigationButtons: React.FC<{
         <button
             onClick={onNext}
             disabled={disabled}
-            className="mt-4 rounded-lg w-24 bg-gradient-to-r from-[#6562aa] to-[#9996DE] text-white px-4 py-2 disabled:opacity-50"
+            className="mt-4  flex justify-center items-center gap-x-2  rounded-lg  bg-gradient-to-r from-[#6562aa] to-[#9996DE] text-white px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-            {nextLabel}
+            {nextLabel} 
+            <MoveRight className="h-4 w-4" />
         </button>
     </div>
 );
@@ -73,6 +74,8 @@ const CheckboxStep: React.FC<StepProps & {
                 checked={(formData[field] as string[]).includes(option)}
                 label={option}
                 onChange={() => handleCheckboxChange(field, option)}
+                isPersonalDetail ={false}
+
             />
         ))}
     </div>
