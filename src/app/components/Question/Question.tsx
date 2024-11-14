@@ -156,12 +156,30 @@ const PersonalBrandingModal: React.FC = () => {
         setCurrentStep(1);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         console.log('Final data for store it in DB', formData);
         setIsModalOpen(false);
         setCurrentStep(1);
-    };
-
+      
+        try {
+          const response = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',  
+            },
+            body: JSON.stringify(formData),  
+          });
+      
+          if (response.ok) {
+            console.log('Data stored successfully');
+          } else {
+            console.error('Error storing data', response.status);
+          }
+        } catch (error) {
+          console.error('Error sending data to the server:', error);
+        }
+      };
+        
     const renderCharCount = (text: string, maxLength: number) => `${text.length}/${maxLength}`;
 
     if (!isModalOpen) return null;

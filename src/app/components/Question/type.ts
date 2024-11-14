@@ -14,6 +14,7 @@ export interface FormData {
     emailNotification: boolean;
   }
   
+
   export interface StepProps {
     formData: FormData;
     handleChange: (field: keyof FormData, value: string | string[] | boolean) => void;
